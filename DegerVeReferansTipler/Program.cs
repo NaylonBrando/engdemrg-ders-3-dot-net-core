@@ -38,6 +38,7 @@ namespace DegerVeReferansTipler
             //sayilar1'in yeni referans nosu 102
             //c gibi dillerde pointer olarak karsımıza cıkar
             //peki 101. adrese ne oldu. - silindi!
+            //deneme
 
         }
     }
