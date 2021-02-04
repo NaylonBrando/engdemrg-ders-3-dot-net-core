@@ -23,7 +23,7 @@ namespace DegerVeReferansTipler
 
             //değer tipleri: int, decimal, flood, double, bool(0,1 tutar)...
             //sayılsal görüntüler.
-            
+
             //referans tip: array, class, interface
 
             //bellekte stack ve heap bölümleri var
@@ -41,6 +41,68 @@ namespace DegerVeReferansTipler
             //peki 101. adrese ne oldu. - silindi!
             //deneme 1234
 
+
+            //////////////////////////////////////////////////////////
+
+            Person personel1 = new Person();
+            Person personel2 = new Person();
+
+            personel1.Name = "A";
+            personel2 = personel1; //personel2'nin referans numrasını(adresi) personel1 ile aynı
+
+            Console.WriteLine("Personel 2'nin ismi: " + personel2.Name);
+
+
+            Customer customer = new Customer();
+            customer.Name = "XYZ";
+
+            Person person3 = customer;
+            // Customer = Employee; bunları hop atayamazsınız. int ile string gibi
+            //peki az önce Customer = Employee'yi birbirine atayamıyorken neden person3 = customer atayabildim ? Cevap: Customer Persondan miras almıstır. Person miras verdiği için referans alabilir.
+            //Base sınıfına(Personel), yavru sınıflardan(Alt sınıf, kalıtım yoluyla atanan sınıf vs) referans atayabilirsiniz
+            Console.WriteLine(person3.Name);
+            
+            //person class'i miras alan sınıfların adresini tutabilir. ---- asagıdaki personmanager class'indan görebilirsiniz
+            Employee employee1 = new Employee();
+            employee1.Name = "Erhan";
+            PersonManager personManager = new PersonManager();
+            personManager.Add(employee1); //parametresi Person olan metoda employee sınıfından nesne gönderdik xd.
+
+
+
+
+
+
         }
+        public class Person
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string LastName { get; set; }
+
+        }
+
+        public class Customer : Person
+        {
+            public string CreditCardNumber { get; set; }
+        }
+
+        public class Employee : Person
+        {
+            public int EmploeyeeNumber { get; set; }
+        }
+
+
+        public class PersonManager
+        {
+            public void Add(Person person)
+            {
+                Console.WriteLine(person.Name);
+            }
+        }
+        
+
+
+
     }
 }
