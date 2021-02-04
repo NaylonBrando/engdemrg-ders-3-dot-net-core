@@ -16,7 +16,6 @@ namespace GenericsIntro
         //yani MyList<string> ... = new .....diye nesne olusturgumuzda bu "string[] items;" olacak.  //Not :Her olusturdugumuzda yeni bir referans adresinde olacak.
         public MyList() //Buna constructor, Bu Kurucu metod denir. Class new denirken oto çalışır.
         {               //Manası classtan her nesne olusturdugumuz vakit otomatik calisan metod.
-
             items = new T[0]; //Bu sınıfımız için her nesne oluşturdugumuzda verileri tutmak için array sınıfından nesne tanımlamak gerekir. Her nesne için kurucu metoddan bir array nesnesi
         }
         public void Add(T item) //parametre tipi yani string item vs gibi tanımlamak yerine generic oldugu için bu sınıftan nesne olustururken tanımladıgımız türden parametre türü belli olur.
@@ -30,11 +29,21 @@ namespace GenericsIntro
                 items[i] = tempArray[i];
             }
 
-            items[items.Length - 1] = item; //Nesnemize en son ekleyecegimiz verinin kodu
-        
-        
+            items[items.Length - 1] = item; //Nesnemize en son ekleyecegimiz verinin kodu             
         }
 
+        public void Count()
+        {
+            Console.WriteLine(items.Length);
+        }
+
+        public void ShowList()
+        {
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+        }
 
     }
 }
