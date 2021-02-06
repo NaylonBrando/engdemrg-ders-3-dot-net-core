@@ -50,7 +50,7 @@ namespace DegerVeReferansTipler
             personel1.Name = "A";
             personel2 = personel1; //personel2'nin referans numrasını(adresi) personel1 ile aynı
 
-            Console.WriteLine("Personel 2'nin ismi: " + personel2.Name);
+            Console.WriteLine("Personel 2'nin ismi: " + personel2.Name); //Cıktı : A
 
 
             Customer customer = new Customer();
@@ -66,7 +66,7 @@ namespace DegerVeReferansTipler
             Employee employee1 = new Employee();
             employee1.Name = "Erhan";
             PersonManager personManager = new PersonManager();
-            personManager.Add(employee1); //parametresi Person olan metoda employee sınıfından nesne gönderdik xd.
+            personManager.Add(employee1); //Parametresi Person olan metoda employee sınıfından nesne gönderdik.
 
 
 

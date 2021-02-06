@@ -19,7 +19,6 @@ namespace OOP_1
             //stack                         //heap --- heapte bir adresi var
             //referans tipleri olusturabilmek için, heap için olusturmak için newlemek gerekiyor
             //productManager yeni refrans numarası almıs ProductManager'dir'
-
             productManager.Add(product1);
             
 
